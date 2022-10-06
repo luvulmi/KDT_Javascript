@@ -1,0 +1,40 @@
+* {
+    padding: 0;
+    /* margin: 0; */
+}
+
+caption {
+    color: blue;
+    font-weight: 900;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+caption,
+table tr {
+    height: 30px;
+}
+
+table td {
+    width: 100px;
+}
+
+table th,
+table td {
+    border: 1px solid;
+}
+
+table th {
+    font-weight: 900;
+    text-align: center;
+    padding: 0 10px;
+    background-color: chartreuse;
+}
+
+table td {
+    text-align: right;
+    padding-right: 15px;
+    background-color: plum;
+}
