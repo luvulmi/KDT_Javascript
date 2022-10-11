@@ -48,10 +48,12 @@ let endFlag = true; // true : 계속, false : 끝
 
 alert('끝말잇기 Start.');
 
-for (; endFlag;) { // flag 변수 활용해서 false일 때 중첩 루프 탈출.
+outer: // 레이블 문 사용ver.
+for (; ;) { // flag 변수 활용해서 false일 때 중첩 루프 탈출.
    beforeword = prompt('처음 한글 세글자 단어 입력하세요!!^^');
 
-   // null 조건을 먼저 거는 이유.
+   // null 조건을 먼저 거는 이유. beforeword.length 조건을 먼저 걸 경우
+   // null이 나왔을 때 null.length를 인식할 수 없어 컴파일 에러.
    if (beforeword === null) {
       if (confirm('정말 종료??')) {
          alert('게임종료!!');
@@ -67,8 +69,7 @@ for (; endFlag;) { // flag 변수 활용해서 false일 때 중첩 루프 탈출
          if (afterword === null) {
             if (confirm('정말 종료하시겠습니까?')) {
                alert('게임종료!!');
-               endFlag = false;
-               break;
+               break outer;
             }
          } else if (afterword.length === 3) {
             if (afterword[0] === beforeword[beforeword.length - 1]) {
@@ -82,8 +83,7 @@ for (; endFlag;) { // flag 변수 활용해서 false일 때 중첩 루프 탈출
             if (confirm('정말 끝내시겠습니까??')) {
                alert(`${gameNum} 개의 끝말잇기를 성공하셨어요^^`);
                alert('게임종료!!');
-               endFlag = false;
-               break;
+               break outer;
             }
          } else {
             alert('세 글자 단어만 입력하세요~~');
