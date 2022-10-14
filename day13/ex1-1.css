@@ -1,0 +1,41 @@
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#main_container {
+    width: 500px;
+    height: 540px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#main_container img {
+    width: 500px;
+    height: 500px;
+}
+
+.nation_container {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.nation_container a {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    background-color: darkgray;
+    color: red;
+    text-decoration: none;
+}
