@@ -38,4 +38,8 @@ a.nationBox {
     opacity: .5;
 }
 
+.nation_container a:nth-child(1) {
+    opacity: 1;
+}
+
 

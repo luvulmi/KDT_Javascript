@@ -15,35 +15,45 @@ let imgAr = [
     './images/5.jpg',
 ];
 
-let slideNumber = 1, trigger = true;
-
-
 for (let i = 0; i < imgAr.length; i++) {
     nation_container.innerHTML += `<a href="#" class="nationBox nation${i + 1}">${i + 1}</a>`;
 }
 
+// ========================================================================
+
 const nationBox = nation_container.getElementsByClassName('nationBox');
-let tmp = nationBox[0]; // 직전요소
+let tmp = nationBox[0],
+    trigger = true,
+    slide_Interval;
 
 
 function changeNation() {
-    img.setAttribute('src', imgAr[slideNumber]);
+    let img_num = tmp.textContent % imgAr.length;
+    // index와 textcontent의 관계분석!!!
+    img.setAttribute('src', imgAr[img_num]);
     // img.src = `./images/${this.textContent}.jpg`
 
     tmp.style.opacity = '.5';
-    nationBox[slideNumber].style.opacity = '1';
-    tmp = nationBox[slideNumber++];
-
-    if (slideNumber === imgAr.length) slideNumber = 0;
+    nationBox[img_num].style.opacity = '1';
+    tmp = nationBox[img_num];
 }
 
-nationBox[0].style.opacity = '1';
+// =========================================================================
+//  기능을 모듈화. > 재사용성 높이기.
 
-let intervalid = setInterval(changeNation, 1500);
+function slide_start() {
+    slide_Interval = setInterval(changeNation, 1000);
+}
 
-main_container.addEventListener('click', function () {
-    if (trigger) clearInterval(intervalid);
-    else setInterval(changeNation, 1500);
+function slide_stop() {
+    clearInterval(slide_Interval);
+}
+
+slide_start();
+
+main_container.addEventListener('click', () => {
+    if (trigger) slide_stop();
+    else slide_start();
 
     trigger = !trigger;
 });
