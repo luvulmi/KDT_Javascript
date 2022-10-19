@@ -1,0 +1,25 @@
+.scrollTop {
+    width: 60px;
+    line-height: 50px;
+    background-color: palevioletred;
+    color: red;
+    text-align: center;
+    border-radius: 20%;
+    opacity: .7;
+    font-weight: bold;
+
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    margin: 10px;
+    cursor: pointer;
+    user-select: none;
+
+    display: none;
+    transition: all .7s;
+}
+
+.scrollTop:hover {
+    width: 100px;
+    opacity: 1;
+}
