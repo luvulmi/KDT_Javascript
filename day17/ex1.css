@@ -1,0 +1,26 @@
+.scrollTop {
+    background-color: palevioletred;
+    color: red;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: bold;
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* ================================스크롤전용클래스지정 */
+.scrollTop.show {
+    transition: all .5s;
+    opacity: .5;
+    visibility: visible;
+}
+
+/* ============================마우스호버전용클래스지정 */
+.scrollTop.show.hover {
+    opacity: 1;
+    cursor: pointer;
+    padding: 10px 20px;
+}
