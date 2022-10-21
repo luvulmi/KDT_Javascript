@@ -1,0 +1,69 @@
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.main_container {
+    width: 650px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 0 auto;
+    user-select: none;
+}
+
+.wrapper {
+    width: 400px;
+    height: 500px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 50px;
+}
+
+.img_container {
+    display: flex;
+    position: absolute;
+    transition: all .5s;
+    /* 자연스럽게 슬라이드 위해 트랜지션 */
+    left: 0;
+    /* 첫화면부터 트랜지션 적용위해 left 0으로 걸기. */
+}
+
+.img_container img {
+    height: 500px;
+    width: 400px;
+}
+
+/* =================버튼================= */
+.slide_Btn {
+    height: 100px;
+    width: 100px;
+    opacity: .5;
+}
+
+.main_container a {
+    width: 100px;
+    height: 100px;
+}
+
+.main_container a:nth-of-type(1) {
+    position: absolute;
+    left: 0;
+}
+
+.main_container a:nth-of-type(2) {
+    position: absolute;
+    right: 0;
+}
+
+.hide {
+    visibility: hidden;
+}
+
+.slide_Btn:hover {
+    opacity: 1;
+    cursor: pointer;
+}
