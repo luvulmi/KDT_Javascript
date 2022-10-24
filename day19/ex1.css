@@ -30,7 +30,7 @@ body {
   border-radius: 50px;
 }
 
-.img_container {
+.slide_list {
   display: flex;
   position: absolute;
   transition: all .5s;
@@ -39,9 +39,9 @@ body {
   /* 첫화면부터 트랜지션 적용위해 left 0으로 걸기. */
 }
 
-.img_container img {
-  height: 500px;
-  width: 400px;
+.slide_list img {
+  width: 450px;
+  height: 600px;
 }
 
 /* =================버튼================= */
@@ -57,8 +57,8 @@ a.button {
 }
 
 a.button img {
-  width: 100px;
-  height: 100px;
+  width: 50px;
+  height: 50px;
 }
 
 a.button.prev {
