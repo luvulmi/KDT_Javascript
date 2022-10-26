@@ -7,7 +7,7 @@
 'use strict';
 
 const header = document.querySelector('header'), 
-  menu_list = header.querySelectorAll('.menu a'),
+  menu_a = header.querySelectorAll('.menu a'),
   contents = header.querySelectorAll('.contents div'),
   selected = header.querySelector('.selected');
 
@@ -23,9 +23,9 @@ function showContent(n){
 // selected 이동 함수
 
 // 클릭 이벤트
-for (let li of menu_list) {
-  li.addEventListener('click', function(){
-    contents.style.display = 'none';
+for (let a of menu_a) {
+  a.addEventListener('click', function(){
     this.classList.add('selected');
+    first_c.classList.remove('selected');
   });
 }

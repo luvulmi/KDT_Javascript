@@ -40,7 +40,9 @@ header {
 
 main {
   background-color: rgb(242, 173, 150);
-  margin-top: 11em;
+
+  /* js에서 마진 설정 */
+  /* margin-top: 11em; */
   padding: .625em;
 }
 
@@ -89,6 +91,4 @@ header .contents div {
   display: none;
 }
 
-header .contents div:target {
-  display: block;
-}
+/* target 삭제 */
