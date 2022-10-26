@@ -1,0 +1,87 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+body {
+  background-color: khaki;
+  margin: 0 1%;
+}
+
+header {
+  /* 
+      < sticky >
+
+  - 기본적으로 offset 지정전에는 relative 와 같이 static 특성을 가지되,
+    offset 을 지정한 후에는 해당 위치를 기준으로 요소의 스크롤이 발생하는
+    위치를 기준으로 fixed 와 같이 뷰포트에 고정.
+    단, 해당 요소가 컨테이닝 블록의 끝 모서리를 만나는 순간 고정되는 특성이
+    해제.
+    컨테이닝 블럭은 가장 가까운 부로 요소로 결정이 되지만, 해당 부모 요소가
+    스크롤되는 요소가 아닌 경우에는 고정되는 특성은 적용되지 않음에 주의.
+  */
+
+  /* fixed 를 sticky 로 수정 */
+  position: sticky;
+  top: 0;
+  /* width 삭제 : 블럭요소이므로 width 불필요 */
+
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: khaki;
+
+  padding-bottom: .625em;
+}
+
+main {
+  /* maring-top 삭제 */
+  background-color: rgb(242, 173, 150);
+  padding: .625em;
+}
+
+header .menu,
+header .contents {
+  width: 60%;
+}
+
+/* ============================================================================= */
+
+header .menu {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: .3125em;
+}
+
+header .menu>li {
+  width: 33%;
+}
+
+header .menu a {
+  background-color: darkseagreen;
+  color: aliceblue;
+  letter-spacing: .4em;
+  padding-left: .4em;
+  line-height: 2.5em;
+
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* ============================================================================= */
+
+header .contents {
+  background-color: rgb(202, 232, 244);
+}
+
+header .contents div {
+  padding: 10px;
+  display: none;
+}
+
+header .contents div:target {
+  display: block;
+}
