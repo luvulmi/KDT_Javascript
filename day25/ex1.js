@@ -48,12 +48,12 @@ function highlightPager(nextIdx) {
 function positionBeforMove(nextIdx, directionMove) {    // nextIde : 예비동작 슬라이드의 인덱스.
   const nextEle = slides[nextIdx];                    // directionMove : 예비동작 슬라이드의 위치값.( 1 : 100%, -1 : -100% )
 
-  nextEle.classList.remove('animated');
+  nextEle.classList.remove('animated'); // 다음에 올 이미지에 트랜지션 제거.
   nextEle.style.left = `${directionMove * 100}%`;
 }
 
 // < 실제 이미지 슬라이딩 동작 함수 >
-function activeSlide(nextIdx, directionMove) {          // nextIde : 실제동작 차슬라이드의 인덱스.
+function activeSlide(nextIdx, directionMove) {          // nextIdx : 실제동작 차슬라이드의 인덱스.
   const currentEle = slides[currentIdx],               // directionMove : 실제동작 당슬라이드의 위치값.( 1 : -100%, -1 : 100% )
     nextEle = slides[nextIdx];
 
@@ -83,6 +83,7 @@ function activeSlide(nextIdx, directionMove) {          // nextIde : 실제동�
     단, 끝 요소라 하더라도 동일한 끝 요소를 연속 클릭하면, 끝 요소의 불필요하고 계속적인 우측 이동이
     발생되므로 이를 방지하기 위해 현재 인덱스와 다음 동작 인덱스가 다른 경우에만 동작하도록 보완 처리.
   */
+
   if (currentIdx === slides.length - 1 && currentIdx !== nextIdx) {
     setTimeout(() => {
       currentEle.classList.remove('animated');
