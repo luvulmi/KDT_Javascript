@@ -1,0 +1,111 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.page_container {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.pageFrame {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  transition: all 1s;
+}
+
+.page {
+  padding: 2%;
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.page1 {
+  background-color: aliceblue;
+}
+
+.page2 {
+  background-color: antiquewhite;
+}
+
+.page3 {
+  background-color: aqua;
+}
+
+.page4 {
+  background-color: aquamarine;
+}
+
+
+
+.page .img {
+  float: left;
+  width: 300px;
+  height: 400px;
+  margin-right: 20px;
+  background: url(./image/1.jpg) no-repeat center/100% 100%;
+}
+
+.page .img2 {
+  background-image: url(./image/2.jpg);
+}
+
+.page .img3 {
+  background-image: url(./image/3.jpg);
+}
+
+.page .img4 {
+  background-image: url(./image/4.jpg);
+}
+
+
+.page p {
+  font-size: 30px;
+  font-style: italic;
+  letter-spacing: 5px;
+  word-break: break-all;
+  color: blue;
+  text-shadow: 5px 3px 2px rgb(0 0 0 / 0.5);
+}
+
+
+
+
+
+.btn {
+  position: fixed;
+  top: 42.5%;
+  right: 10%;
+  width: 50px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  border: 0;
+}
+
+.btn.downBtn {
+  top: 57.5%;
+}
+
+.btn::after {
+  content: "";
+  display: block;
+  border-bottom: 30px solid red;
+  border-right: 20px solid transparent;
+  border-left: 20px solid transparent;
+  position: absolute;
+  top: 46%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.btn.downBtn::after {
+  border-top: 30px solid red;
+  border-bottom: 0;
+  top: 60%;
+}
